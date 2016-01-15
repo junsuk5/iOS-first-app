@@ -306,6 +306,8 @@ required init?(coder aDecoder: NSCoder) {
 ## intrinsicContentSize
 뷰의 사이즈를 지정하여 반환, 그것을 레이아웃 시스템에 전달하는 역할.
 
+안드로이드의 onMeasure.
+
 ### 사용예
 ```RatingControl.swift
 override func intrinsicContentSize() -> CGSize {
@@ -328,7 +330,7 @@ button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDo
 UIView 클래스의 메소드.
 이 안에 서브뷰의 레이아웃 처리를 작성하여, view의 상태에 맞춰서 필요할 때에 레이아웃 처리가 됨.
 
-안드로이드의 onMeasure(), onLayout()의 역할인 듯.
+안드로이드의 onLayout()의 역할인 듯.
 
 ### 사용예
 ```RatingControl.swift
@@ -409,6 +411,29 @@ var rating = 0 {
     }
 }
 ```
+
+##XCTAssertNotNil()
+Xcode 의 테스트 프레임워크 'XCTest' 에서 사용.
+인수로 넘긴 값이 Nil 이 아닌지를 테스트 하는 메소드.
+
+### 사용예
+```FoodTrackerSampleTests.swift
+// Success case.
+let potentialItem = Meal(name: "Newest meal", photo: nil, rating: 5)
+XCTAssertNotNil(potentialItem)
+```
+
+## XCTAssertNil()
+### 사용예
+```FoodTrackerSampleTests.swift
+// Failure cases.
+let noName = Meal(name: "", photo: nil, rating: 0)
+XCTAssertNil(noName, "Empty name is invalid")
+
+let badRating = Meal(name: "Really bad rating", photo: nil, rating: -1)
+XCTAssertNil(badRating, "Negative ratings are invalid, be positive")
+```
+
 
 
 
