@@ -273,6 +273,8 @@ func imagePickerController(picker: UIImagePickerController, didFinishPickingMedi
 }
 ```
 
+# Implement a Custom Control 편
+
 ## UIView
 화면 표시와 영역내의 콘텐츠를 표시하는 클래스.
 튜토리얼에서는 rating 부분을 커스텀 뷰로 작성.
@@ -412,6 +414,8 @@ var rating = 0 {
 }
 ```
 
+# Define Your Data Model 편
+
 ##XCTAssertNotNil()
 Xcode 의 테스트 프레임워크 'XCTest' 에서 사용.
 인수로 넘긴 값이 Nil 이 아닌지를 테스트 하는 메소드.
@@ -424,6 +428,8 @@ XCTAssertNotNil(potentialItem)
 ```
 
 ## XCTAssertNil()
+Nil 인지 체크
+
 ### 사용예
 ```FoodTrackerSampleTests.swift
 // Failure cases.
